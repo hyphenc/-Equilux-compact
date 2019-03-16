@@ -516,7 +516,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .end-session-dialog-logout-icon {
-  border-radius: 5px;
+  border-radius: 9999px;
   width: 48px;
   height: 48px;
   background-size: contain;
@@ -700,7 +700,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .polkit-dialog-user-icon {
-  border-radius: 5px;
+  border-radius: 9999px;
   background-size: contain;
   width: 48px;
   height: 48px;
@@ -1062,7 +1062,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 /* TOP BAR // ~ */
 #panel {
-  background-color: rgba(45, 45, 45, 0.6);
+  background-color: rgba(45, 45, 45, 0.99);
   /* transition from solid to transparent */
   transition-duration: 250ms;
   font-weight: bold;
@@ -1078,10 +1078,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   spacing: 0;
 }
 
-#panel .panel-corner {
+.panel-corner {
   -panel-corner-radius: 0;
-  -panel-corner-background-color: rgba(0, 0, 0, 0.6);
-  -panel-corner-border-width: 2px;
+  -panel-corner-background-color: transparent;
+  -panel-corner-border-width: 0;
   -panel-corner-border-color: transparent;
 }
 
@@ -1299,12 +1299,38 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   font-weight: bold;
 }
 
-.world-clocks-grid {
-  spacing-rows: 0.4em;
+weather-header.location {
+  font-weight: normal;
+  font-size: 1em;
+}
+
+.world-clocks-grid,
+.weather-grid {
+spacing-rows: 0.4em;
+spacing-columns: 0.8em;
 }
 
 .weather-box {
   spacing: 0.4em;
+}
+
+.world-clocks-city {
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.world-clocks-time {
+  font-feature-settings: "tnum";
+  font-size: 1em;
+}
+
+.world-clocks-timezone {
+  font-feature-settings: "tnum";
+  font-size: 1em;
+}
+
+.weather-forecast-icon {
+  icon-size: 2.28572em;
 }
 
 .calendar-month-label {
@@ -1338,20 +1364,16 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: rgba(190, 190, 190, 0.3);
 }
 
-.calendar-change-month-back {
-  background-image: url("assets/calendar-arrow-left.svg");
-}
-
 .calendar-change-month-back:rtl {
-  background-image: url("assets/calendar-arrow-right.svg");
-}
-
-.calendar-change-month-forward {
   background-image: url("assets/calendar-arrow-right.svg");
 }
 
 .calendar-change-month-forward:rtl {
   background-image: url("assets/calendar-arrow-left.svg");
+}
+
+.calendar-change-month-back StIcon, .calendar-change-month-forward StIcon {
+  icon-size: 1.14286em;
 }
 
 .calendar-day-base {
@@ -1503,6 +1525,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   margin: 4px 4px 4px 0px;
 }
 
+.message-icon-bin > .fallback-window-icon {
+  width: 1.14286em;
+  height: 1.14286em;
+}
+
 .message-secondary-bin {
   padding: 0 8px;
 }
@@ -1604,19 +1631,16 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: rgba(190, 190, 190, 0.5);
 }
 
-.system-switch-user-submenu-icon.user-icon {
-  icon-size: 20px;
-  padding: 0 2px;
-}
-
-.system-switch-user-submenu-icon.default-icon {
+.system-switch-user-submenu-icon {
   icon-size: 16px;
   padding: 0 4px;
 }
 
-#appMenu {
+.appMenu,
+.app-well-menu {
   spinner-image: url("process-working.svg");
   spacing: 4px;
+  max-width: 27.25em;
 }
 
 #appMenu .label-shadow {
@@ -1675,6 +1699,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: rgba(190, 190, 190, 0.3);
   background-image: none;
   background-size: auto;
+  box-shadow: none;
 }
 
 .ripple-box:rtl {
@@ -1685,6 +1710,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .popup-menu-arrow {
   width: 16px;
   height: 16px;
+  icon-size: 1.14286em;
 }
 
 .popup-menu-icon {
@@ -1880,6 +1906,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .list-search-results {
   spacing: 3px;
+}
+
+.search-section:last-child .search-section-separator {
+  background-color: transparent;
 }
 
 .search-section-separator {
@@ -2128,19 +2158,25 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border-radius: 12px;
   background-image: none;
   background-color: rgba(190, 190, 190, 0.3);
+  border: 0;
 }
 
 .page-indicator:hover .page-indicator-icon {
   background-image: none;
   background-color: rgba(190, 190, 190, 0.5);
+  border-color: transparent;
 }
 
 .page-indicator:active .page-indicator-icon {
   background-image: none;
+  border: none;
+  margin: 0;
   background-color: rgba(190, 190, 190, 0.7);
 }
 
-.page-indicator:checked .page-indicator-icon {
+.page-indicator:checked,
+.page-indicator-icon,
+.page-indicator:checked:active {
   background-image: none;
   background-color: #bebebe;
   transition-duration: 0ms;
@@ -2148,6 +2184,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .page-indicator:checked:active {
   background-image: none;
+  background-color: transparent;
 }
 
 .app-well-app > .overview-icon.overview-icon-with-label,
@@ -2411,6 +2448,15 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
+.page-indicator {
+  padding: 4px 4px;
+}
+
+.page-indicator-icon {
+  width: 8px;
+  height: 8px
+}
+
 .key-container {
   padding: 4px;
   spacing: 4px;
@@ -2586,11 +2632,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 /* Auth Dialogs & Screen Shield */
-.framed-user-icon {
+.user-icon {
   background-size: contain;
   border: none;
   color: #bebebe;
-  border-radius: 4px;
+  border-radius: 9999px;
   display: none;
 }
 
