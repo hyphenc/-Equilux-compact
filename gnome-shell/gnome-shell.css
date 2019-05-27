@@ -86,8 +86,6 @@ Examples:
 }
 
 stage {
-  /* // ~ */
-  /*font-family: Roboto, Ubuntu, Cantarell, Sans-Serif;*/
   font-family: "Fira Code", monospace; 
   font-size: 10.5pt;
   font-weight: 400;
@@ -1060,7 +1058,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border-radius: 0 0 0 0;
 }
 
-/* TOP BAR // ~ */
+/* TOP BAR */
 #panel {
   background-color: rgba(45, 45, 45, 0.99);
   /* transition from solid to transparent */
@@ -1256,8 +1254,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .datemenu-today-button {
   min-height: 48px;
-  /* // ~ */
-  font-family: Roboto, Ubuntu, Cantarell, Sans-Serif;
+  font-family: "Fira Code", monospace;
 }
 
 .message-list-section-list:ltr {
@@ -1440,7 +1437,6 @@ spacing-columns: 0.8em;
 }
 
 .calendar-day-with-events {
-  /* // ~ */
   color: #bebebe;
   font-weight: normal;
   text-decoration: underline;
@@ -2722,7 +2718,6 @@ spacing-columns: 0.8em;
   color: rgba(190, 190, 190, 0.8);
   background-color: #2d2d2d;
   border-color: transparent;
-  /* // ~ */
   /*box-shadow: 0 1px 1.5px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.24);*/
   text-shadow: none;
   icon-shadow: none;
@@ -2732,7 +2727,6 @@ spacing-columns: 0.8em;
   color: #bebebe;
   background-color: #2d2d2d;
   border-color: transparent;
-  /* // ~ */
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 3px 3px rgba(0, 0, 0, 0.345);
   box-shadow: 0 0 transparent;
   text-shadow: none;
@@ -2743,7 +2737,6 @@ spacing-columns: 0.8em;
   color: #bebebe;
   background-color: #2d2d2d;
   border-color: transparent;
-  /* // ~ */
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 3px 3px rgba(0, 0, 0, 0.345);
   text-shadow: none;
   icon-shadow: none;
